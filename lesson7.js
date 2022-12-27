@@ -53,4 +53,3 @@ switch (true) {
 }
 
 alert(`${rusultBirthYear} \n ${rusultYourCity} \n ${rusultLikeSport}`)
-
