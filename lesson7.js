@@ -1,53 +1,56 @@
-const yourAge = +prompt("Enter your Age?", '');
-const yourSity = prompt("Enter your Sity?", '');
+const birthYear = +prompt("Enter your birth year?", '');
+const yourCity = prompt("Enter your City?", '');
 const likeSport = prompt("What is your favorite sport?", '');
 
-let rusultYourAge;
-let rusultYourSity;
+let rusultBirthYear;
+let rusultYourCity;
 let rusultLikeSport;
 
-if (!isNaN(yourAge) && (yourAge < 1900)) {
-    rusultYourAge = `Ваш вік ${yourAge}`
+if (!isNaN(birthYear) && (birthYear > 1900)) {
+    rusultMyAge = 2022 - birthYear;
+    rusultBirthYear = `Ваш вік ${rusultMyAge}`
 } else {
-    rusultYourAge = `Шкода, що Ви не захотіли ввести свій(ю) вік!`
+    rusultBirthYear = `Шкода, що Ви не захотіли ввести свій(ю) вік!`
 }
 
 switch (true) {
-    case (yourSity === null):
-        rusultYourSity = `Шкода, що Ви не захотіли ввести свіє місто!`
+    case (yourCity === null):
+        rusultYourCity = `Шкода, що Ви не захотіли ввести свіє місто!`
         break;
-    case ('kiyv' === yourSity.toLowerCase()):
-        rusultYourSity = 'Ти живеш у столиці України!'
+    case ('kiyv' === yourCity.toLowerCase()):
+        rusultYourCity = 'Ти живеш у столиці України!'
         break;
-    case ('london' === yourSity.toLowerCase()):
-        rusultYourSity = 'Ти живеш у столиці Англії!'
+    case ('london' === yourCity.toLowerCase()):
+        rusultYourCity = 'Ти живеш у столиці Англії!'
         break;
-    case ('vashington' === yourSity.toLowerCase()):
-        rusultYourSity = 'Ти живеш у столиці США!'
+    case ('washington' === yourCity.toLowerCase()):
+        rusultYourCity = 'Ти живеш у столиці США!'
         break;
-        case (yourSity.trim() === ''):
-            rusultYourSity = `Шкода, що Ви не захотіли ввести свіє місто!`
-            break;
+    case (yourCity.trim() === ''):
+        rusultYourCity = `Шкода, що Ви не захотіли ввести свіє місто!`
+        break;
     default:
-        rusultYourSity = `Tи живеш у місті ${yourSity}`
+        rusultYourCity = `Tи живеш у місті ${yourCity}`
 }
 
-switch (likeSport) {
-    case ('football' === yourSity.toLowerCase()):
-        rusultLikeSport = 'Круто! Хочеш стати - Lionel Messi?'
+switch (true) {
+    case (likeSport === null):
+        rusultLikeSport = `Шкода, що Ви не захотіли ввести свій спорт!`
         break;
-    case ('tennis' === yourSity.toLowerCase()):
+    case ('football' === likeSport.toLowerCase()):
+        rusultLikeSport = 'Круто! Хочеш стати - Lionel Messi?'
+        console.log(likeSport)
+        break;
+    case ('tennis' === likeSport.toLowerCase()):
         rusultLikeSport ='Круто! Хочеш стати - Serena Williams?'
         break;
-    case ('ping-pong' === yourSity.toLowerCase()):
+    case ('ping-pong' === likeSport.toLowerCase()):
         rusultLikeSport = 'Круто! Хочеш стати - Andrew Baggaley?'
         break;
-    case (likeSport):
-        rusultLikeSport = `Tи займаєшься ${likeSport}`
-        break;
     default:
-        rusultLikeSport = `Шкода, що Ви не захотіли ввести свій спорт!`
+        rusultLikeSport = `Гарний вибір спорту - ${likeSport}`
+        break;
 }
 
-alert(`${rusultYourAge} \n ${rusultYourSity} \n ${rusultLikeSport}`)
+alert(`${rusultBirthYear} \n ${rusultYourCity} \n ${rusultLikeSport}`)
 
